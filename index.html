@@ -13,9 +13,22 @@
 <body>
     <div id="app">
         <h1>
-            {{ message }}
+            {{ appName }}
         </h1>
-    </div>
+        <div>
+            <input type="text" v-model="newTask">
+            <button class="btn_add_todo" @click="addTask">
+                Aggiungi Task
+            </button>
+        </div>
+        <ul>
+            <li v-for="task in tasks"
+                :class="task.done ? 'todo_done' : ''"
+            >
+                {{ task.text }}
+            </li>
+        </ul>
+    </div>  
     <script src="./js/app.js"></script>
 </body>
 </html>

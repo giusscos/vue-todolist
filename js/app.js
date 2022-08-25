@@ -1,6 +1,18 @@
-const todoListApp = new Vue ({
+const app = new Vue ({
     el: "#app",
     data: {
-        message: 'Hello World!',
+        appName: 'ToDoList',
+        newTask: '',
+        tasks: new Array(),
+    },
+    methods: {
+        addTask() {
+            this.tasks.push({
+                text: this.newTask,
+                done: false,
+            })
+
+            this.newTask = '';
+        }
     }
 });
