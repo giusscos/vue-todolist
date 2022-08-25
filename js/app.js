@@ -7,6 +7,10 @@ const app = new Vue ({
     },
     methods: {
         addTask() {
+            this.newTask = this.newTask.trim();
+
+            if(this.newTask === '') return
+            
             this.tasks.push({
                 text: this.newTask,
                 done: false,
