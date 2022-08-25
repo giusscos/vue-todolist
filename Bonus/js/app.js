@@ -4,6 +4,12 @@ const app = new Vue ({
         appName: 'ToDoList',
         newTask: '',
         tasks: new Array(),
+        tsDone: new Array()
+    },
+    computed: {
+        tasksDone() {
+            return this.tsDone;
+        }
     },
     methods: {
         addTask() {
@@ -17,6 +23,15 @@ const app = new Vue ({
             })
 
             this.newTask = '';
+        },
+        completeTask(task){
+            if(!task.done){
+                this.tsDone.push(task.text);
+            } else {
+                const index = this.tsDone.indexOf(task.text);
+                this.tsDone.splice(index, 1);
+            }
+            return task.done = !task.done;
         }
     }
 });

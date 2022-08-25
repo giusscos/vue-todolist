@@ -33,11 +33,22 @@
                 <ul class="todo_list"> <!-- Lista todo Da fare -->
                     <li class="list_item"
                         v-for="task in tasks"
-                        @click="task.done = !task.done"
+                        @click="completeTask(task)"
                         :class="task.done ? 'todo_done' : ''"
                     >
                         {{ task.text }}
                         <i class="fa-solid fa-xmark"></i>
+                    </li>
+                </ul>
+                <h3 class="separator">
+                    Completati
+                </h3>
+                <ul class="todo_list completed"> <!-- Lista todo Completati -->
+                    <li class="list_item"
+                        v-for="ts in tsDone"
+                    >
+                       {{ ts }} 
+                       <i class="fa-solid fa-xmark"></i>
                     </li>
                 </ul>
             </div>
