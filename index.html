@@ -13,24 +13,34 @@
 </head>
 <body>
     <div id="app">
-        <h1>
-            {{ appName }}
-        </h1>
-        <div>
-            <input type="text" v-model="newTask">
-            <button class="btn_add_todo" @click="addTask">
-                Aggiungi Task
-            </button>
-        </div>
-        <ul>
-            <li v-for="task in tasks"
-                :class="task.done ? 'todo_done' : ''"
-                class="list_item"
-            >
-                {{ task.text }}
-                <i class="fa-solid fa-xmark" @click="task.done = !task.done"></i>
-            </li>
-        </ul>
+        <header class="main_header">
+            <div class="container">
+                <div class="title_wrapper">
+                    <h1 class="title">
+                        {{ appName }}
+                    </h1>
+                </div>
+                <div class="add_todo_wrapper">
+                    <input type="text" v-model="newTask">
+                    <button class="btn_add_todo" @click="addTask">
+                        Aggiungi Task
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="main_content">
+            <div class="container">
+                <ul class="todo_list">
+                    <li class="list_item"
+                        v-for="task in tasks"
+                        :class="task.done ? 'todo_done' : ''"
+                    >
+                        {{ task.text }}
+                        <i class="fa-solid fa-xmark" @click="task.done = !task.done"></i>
+                    </li>
+                </ul>
+            </div>
+        </main>
     </div>  
     <script src="./js/app.js"></script>
 </body>

@@ -1,3 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+input,
+button{
+    cursor: pointer;
+    border: 0px solid;
+    color: currentColor;
+    background-color: transparent;
+}
+html{
+    font-family: 'Open sans', sans-serif;
+}
+body{
+    color: #fff;
+    background-color: #333;
+}
+/* Layout */
+.container {
+    margin: 0 auto;
+    max-width: 500px
+}
+/* Header */
+.main_header{
+    padding: 2rem 0;
+    font-size: 1.5rem;
+}
+.main_header .add_todo_wrapper{
+    padding: 1rem 0;
+}
+.main_header .add_todo_wrapper > *{
+    color: #333;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    transition: 300ms ease-in-out;
+}
+.btn_add_todo{
+    opacity: 0.8;
+}
+.btn_add_todo:hover{
+    opacity: 1;
+}
+.main_content .todo_list > .list_item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    transition: 300ms ease-in-out;
+    border-bottom: 1px solid currentColor;
+}
+.main_content .todo_list > .list_item > i{
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1.25rem;
+}
 .todo_done{
+    opacity: 0.8;
     text-decoration: line-through;
 }
